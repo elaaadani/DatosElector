@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { Elector } from '../models/UI-Models/elector.mod';
@@ -11,6 +12,7 @@ import { ElectorService } from './elector.service';
 })
 export class DatosElectorComponent implements OnInit {
 
+  electores: Elector[] = [];
   electorrut:string | null | undefined;
   elector:Elector = {
     rut:'',
@@ -27,6 +29,9 @@ export class DatosElectorComponent implements OnInit {
   }
   displayedColumns: string[] = ['rut','nombre','circunscripcion_Electoral','comuna','provincia','region','pais','mesa','local_Votacion','ubicacion'];
   dataSource : MatTableDataSource<Elector> = new MatTableDataSource<Elector>();
+  @ViewChild(MatPaginator) matPaginator!: MatPaginator;
+
+
 
 
   constructor(public readonly electorService:ElectorService,
@@ -44,6 +49,7 @@ export class DatosElectorComponent implements OnInit {
           .subscribe(
             (sucessResponse)=>{
               this.elector = sucessResponse;
+              console.log(sucessResponse);
             }
           );
         }

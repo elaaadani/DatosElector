@@ -52,8 +52,9 @@ import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// Scanner
-import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { QRCodeModule } from 'angular2-qrcode';
+import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
+
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ZXingScannerModule,
+    NgxScannerQrcodeModule,
+    QRCodeModule,
     FormsModule,
     ReactiveFormsModule ,
     MatAutocompleteModule,

@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Consulta-Servel';
+  data = [{
+    'name': 'John Doe',
+    'profile': 'Software Developer',
+    'email': 'john@doe.com',
+    'hobby': 'coding'
+  }]
+  dataToString = JSON.stringify(this.data);
 }

@@ -1,5 +1,23 @@
-<h1>
-  Bienvenida/Bienvenido
-</h1>
+<div [style.padding.px]="10">
+  <h1> Bienvenida /Bienvenido </h1>
 
+  <!-- ngx-scanner-qrcode -->
+  <div class="contenedorqr">
 
+    <ngx-scanner-qrcode class="QRScanner" #action="scanner" (data)="FuncionRut($event)" (error)="onError($event)"></ngx-scanner-qrcode>
+
+  </div>
+
+  <!-- data  -->
+  <p class="data">{{ output }}</p>
+
+  <!-- Loading -->
+  <p *ngIf="action.isLoading">⌛ Loading video...</p>
+
+  <!-- toggleCamera -->
+  <button (click)="action.toggleCamera()" class="btn" [class.btn-info]="!action.isStart" [class.btn-warning]="action.isStart" [disabled]="action.isLoading">
+    <img *ngIf="!action.isStart" src="https://img.icons8.com/ios/50/000000/no-camera--v2.png" width="30px"/>
+    <img *ngIf="action.isStart" src="https://img.icons8.com/ios/50/000000/no-camera--v1.png" width="30px"/>
+  </button>
+
+</div>
