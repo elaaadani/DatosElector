@@ -1,0 +1,16 @@
+.mat-toolbar.mat-primary {
+  background: #28282E;
+  color: #fff;
+}
+
+.mat-raised-button{
+  margin-right: 1em;
+  background: whitesmoke;
+  color:#28282E;
+}
+
+.mat-fab{
+  margin-right: 1em;
+  position: relative;
+
+}
