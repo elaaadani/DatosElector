@@ -24,10 +24,11 @@ export class HomeComponent {
     const myArray = output.split("=")[1];
     const MyArray2 = myArray.split("&")[0]
     let Rut = MyArray2;
+
     this.spinner.show();
     setTimeout(()=>{
       this.spinner.hide();
-    },1000);
+    },3000);
 
     this.router.navigate(['/DatosElectorales/'+Rut])
   }
