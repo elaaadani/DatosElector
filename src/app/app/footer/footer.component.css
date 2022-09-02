@@ -1,0 +1,25 @@
+.btn{
+  border-radius: 100%;
+}
+.elementor-icon {
+  font-size: var(--icon-size,25px);
+  line-height: var(--icon-size,25px);
+  width: calc(var(--icon-size, 25px) + (2 * var(--icon-padding, .5em)));
+  height: calc(var(--icon-size, 25px) + (2 * var(--icon-padding, .5em)));
+  background-color:blue
+}
+
+.m-1 {
+  margin: 0.25rem!important;
+}
+.btn[_ngcontent-dfg-c140] {
+  border-radius: 50%;
+}
+.mb-4 {
+  margin-bottom: 1.5rem!important;
+  padding: inherit;
+}
+.Sitio{
+  color: white;
+    text-decoration: inherit;
+}

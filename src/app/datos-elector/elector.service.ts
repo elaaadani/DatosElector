@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs-compat/Observable';
+import { environment } from 'src/environments/environment';
 import { Elector } from '../models/api-model/elector.model';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Elector } from '../models/api-model/elector.model';
 })
 export class ElectorService {
 
-  private BaseAPIUri = 'https://localhost:7124';
+  private BaseAPIUri = 'https://lbde.azurewebsites.net';
 
   constructor(private httpClient: HttpClient) { }
 

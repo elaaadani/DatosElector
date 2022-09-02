@@ -1,5 +1,5 @@
 .mat-toolbar.mat-primary {
-  background: #28282E;
+  background: rgb(0, 180,224);
   color: #fff;
 }
 
@@ -14,3 +14,7 @@
   position: relative;
 
 }
+.Logo{
+  width: 180px;
+}
+

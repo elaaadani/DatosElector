@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopNavComponent } from './Layout/top-nav/top-nav.component';
 import { DatosElectorComponent } from './datos-elector/datos-elector.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+
 // Add below imports to the Imports Section on the top of the page
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -54,6 +56,7 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QRCodeModule } from 'angular2-qrcode';
 import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
+import { FooterComponent } from './app/footer/footer.component';
 
 
 @NgModule({
@@ -61,13 +64,15 @@ import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
     AppComponent,
     TopNavComponent,
     DatosElectorComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgxScannerQrcodeModule,
+    NgxSpinnerModule,
     QRCodeModule,
     FormsModule,
     ReactiveFormsModule ,

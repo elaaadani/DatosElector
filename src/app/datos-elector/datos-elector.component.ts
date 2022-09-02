@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ErrorHandler, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Elector } from '../models/UI-Models/elector.mod';
 import { ElectorService } from './elector.service';
 
@@ -32,13 +32,20 @@ export class DatosElectorComponent implements OnInit {
   @ViewChild(MatPaginator) matPaginator!: MatPaginator;
 
 
-
-
   constructor(public readonly electorService:ElectorService,
-    public readonly route: ActivatedRoute) { }
+    public readonly route: ActivatedRoute,private router:Router) { }
+
+  public estado=false;
+
 
   ngOnInit(): void {
 
+    this.Response();
+
+
+  }
+
+  Response(){
     this.route.paramMap.subscribe(
       (params) =>{
         this.electorrut = params.get('rut');
@@ -50,9 +57,18 @@ export class DatosElectorComponent implements OnInit {
             (sucessResponse)=>{
               this.elector = sucessResponse;
               console.log(sucessResponse);
+
+              this.estado=true;
+            },(errorResponse)=>{
+              this.elector = errorResponse;
+              console.log("RUT NO EXISTE");
+              console.log(errorResponse);
+              this.estado=false;
+
             }
           );
         }
+
       }
     );
 

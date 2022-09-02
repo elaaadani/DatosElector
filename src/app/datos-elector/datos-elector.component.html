@@ -1,87 +1,94 @@
-<div class="page-header">
-  <div class="container">
-    <h1>Datos Elector</h1>
 
-  </div>
-</div>
-<div class ="container">
-  <div class="mt-1">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div *ngIf="estado">
+  <div class="Contenedor" [style.padding.px]="50">
+    <div class="container-fluid"  style="text-align: center;">
 
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
+      <img width="2560" height="551" alt="" data-srcset="https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO.png 2560w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-360x77.png 360w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-1024x220.png 1024w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-768x165.png 768w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-1536x330.png 1536w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-2048x441.png 2048w" data-src="https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO.png" data-sizes="(max-width: 2560px) 100vw, 2560px" class="attachment-full size-full lazyloaded" src="https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO.png" sizes="(max-width: 2560px) 100vw, 2560px" srcset="https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO.png 2560w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-360x77.png 360w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-1024x220.png 1024w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-768x165.png 768w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-1536x330.png 1536w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-2048x441.png 2048w" class="img-fluid" alt="Responsive image">
+      </div>
 
-      <!-- Position Column -->
-      <ng-container matColumnDef="rut">
-        <th mat-header-cell *matHeaderCellDef> Rut </th>
-        <td mat-cell *matCellDef="let element"> {{element.rut}} </td>
-      </ng-container>
+      <div class="container-fluid" [style.padding.px]="50">
+        <table class="table table-responsive table-striped" >
+          <tbody>
+            <tr>
+              <td colspan="2" class="Header1">
+                <strong>DATOS ELECTORALES</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>RUN</td>
+              <td>{{ elector.rut }}</td>
+            </tr>
+            <tr>
+              <td>Nombre</td>
+              <td>{{ elector.nombre }}</td>
+            </tr>
+            <tr>
+              <td>Circunscripción Electoral</td>
+              <td>{{ elector.circunscripcion_Electoral }}</td>
+            </tr>
+            <tr>
+              <td>Comuna</td>
+              <td>{{ elector.comuna }}</td>
+            </tr>
+            <tr>
+              <td>Mesa</td>
+              <td>{{ elector.mesa }}</td>
+            </tr>
+            <tr>
+              <td>Local de votación</td>
+              <td>{{ elector.local_Votacion }}</td>
+            </tr>
+            <tr>
+              <td>Ubicación</td>
+              <td>{{ elector.ubicacion }}</td>
+            </tr>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="nombre">
-        <th mat-header-cell *matHeaderCellDef> Nombre </th>
-        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
-      </ng-container>
+          </tbody>
+        </table>
+        <div class="container-fluid" [style.padding.px]="30" >
+          <div class="col-sm">
 
-      <!-- Weight Column -->
-      <ng-container matColumnDef="circunscripcion_Electoral">
-        <th mat-header-cell *matHeaderCellDef> Circunscripcion Electoral </th>
-        <td mat-cell *matCellDef="let element"> {{element.circunscripcion_Electoral}} </td>
-      </ng-container>
+            <a href="/" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+              </svg>
+              Volver a escanear
 
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="comuna">
-        <th mat-header-cell *matHeaderCellDef> Comuna</th>
-        <td mat-cell *matCellDef="let element"> {{element.Comuna}} </td>
-      </ng-container>
+            </a>
+            </div>
+        </div>
 
-      <ng-container matColumnDef="provincia">
-        <th mat-header-cell *matHeaderCellDef> Provincia</th>
-        <td mat-cell *matCellDef="let element"> {{element.provincia}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="region">
-        <th mat-header-cell *matHeaderCellDef> Region</th>
-        <td mat-cell *matCellDef="let element"> {{element.region}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="pais">
-        <th mat-header-cell *matHeaderCellDef> Pais</th>
-        <td mat-cell *matCellDef="let element"> {{element.pais}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="mesa">
-        <th mat-header-cell *matHeaderCellDef> Mesa</th>
-        <td mat-cell *matCellDef="let element"> {{element.mesa}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="local_Votacion">
-        <th mat-header-cell *matHeaderCellDef> Local Votación</th>
-        <td mat-cell *matCellDef="let element"> {{element.local_Votacion}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="ubicacion">
-        <th mat-header-cell *matHeaderCellDef> Ubicación</th>
-        <td >{{elector.rut}} </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-    <input type="text" matInput [(ngModel)]="elector.rut" name="rut">
-
-
-    <p>{{ elector.rut }}</p>
-    <p>{{ elector.nombre }}</p>
-    <p>{{ elector.circunscripcion_Electoral }}</p>
-    <p>{{ elector.comuna }}</p>
-    <p>{{ elector.provincia }}</p>
-    <p>{{ elector.region }}</p>
-    <p>{{ elector.mesa }}</p>
-    <p>{{ elector.local_Votacion }}</p>
-    <p>{{ elector.ubicacion}}</p>
+      </div>
 
 
   </div>
 
 </div>
+
+<div *ngIf="!estado" >
+
+  <div class="container-fluid" [style.padding.px]="100" style="text-align: center;">
+
+      <img width="2560" height="551" alt="" data-srcset="https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO.png 2560w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-360x77.png 360w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-1024x220.png 1024w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-768x165.png 768w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-1536x330.png 1536w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-2048x441.png 2048w" data-src="https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO.png" data-sizes="(max-width: 2560px) 100vw, 2560px" class="attachment-full size-full lazyloaded" src="https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO.png" sizes="(max-width: 2560px) 100vw, 2560px" srcset="https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO.png 2560w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-360x77.png 360w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-1024x220.png 1024w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-768x165.png 768w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-1536x330.png 1536w, https://lobarnechea.cl/wp-content/uploads/2022/08/IMAGEN-BANNER-PLEBISCITO-2048x441.png 2048w" class="img-fluid" alt="Responsive image">
+      <div class="container-fluid" [style.padding.px]="30">
+        <div class="col-s">
+          <a href="https://consulta.servel.cl/" class="btn btn-primary">
+            Consulta tus datos electorales
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+            </svg>
+          </a>
+
+
+
+
+
+
+      </div>
+  </div>
+
+
+
+
+  </div>
+
